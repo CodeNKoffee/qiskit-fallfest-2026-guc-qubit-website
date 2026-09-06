@@ -20,9 +20,11 @@ export default function Footer() {
             <p className="eyebrow mb-4">Explore</p>
             <ul className="space-y-2.5 text-sm">
               {[
-                { href: "/#decade", label: "The decade" },
+                { href: "/#timeline", label: "Timeline" },
                 { href: "/#schedule", label: "Schedule" },
                 { href: "/hackathon", label: "Hackathon" },
+                { href: "/#team", label: "Organisers" },
+                { href: "/#venue", label: "Venue & map" },
                 { href: "/resources", label: "Resources" },
                 { href: "/code-of-conduct", label: "Code of conduct" },
               ].map((l) => (

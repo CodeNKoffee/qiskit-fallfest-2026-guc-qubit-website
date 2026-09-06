@@ -144,6 +144,17 @@
 
 /* ---------- Motion ---------- */
 
+@keyframes qff-rail-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *,

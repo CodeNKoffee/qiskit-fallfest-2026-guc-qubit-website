@@ -6,10 +6,11 @@ import { event } from "@/data/event";
 
 const links = [
   { href: "/#decade", label: "The decade" },
-  { href: "/#format", label: "Format" },
+  { href: "/#timeline", label: "Timeline" },
   { href: "/#schedule", label: "Schedule" },
   { href: "/#speakers", label: "Speakers" },
   { href: "/hackathon", label: "Hackathon" },
+  { href: "/#venue", label: "Venue" },
   { href: "/#faq", label: "FAQ" },
 ];
 

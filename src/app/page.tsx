@@ -3,11 +3,13 @@ import Decade from "@/components/sections/Decade";
 import About from "@/components/sections/About";
 import Qubit from "@/components/sections/Qubit";
 import Format from "@/components/sections/Format";
+import EventTimeline from "@/components/sections/EventTimeline";
 import Schedule from "@/components/sections/Schedule";
 import Speakers from "@/components/sections/Speakers";
 import HackathonTeaser from "@/components/sections/HackathonTeaser";
 import Sponsors from "@/components/sections/Sponsors";
 import Team from "@/components/sections/Team";
+import Venue from "@/components/sections/Venue";
 import Faq from "@/components/sections/Faq";
 import Register from "@/components/sections/Register";
 
@@ -24,11 +26,13 @@ export default function Home() {
       <About />
       <Qubit />
       <Format />
+      <EventTimeline />
       <Schedule />
       <Speakers />
       <HackathonTeaser />
       <Sponsors />
       <Team />
+      <Venue />
       <Faq />
       <Register />
     </>

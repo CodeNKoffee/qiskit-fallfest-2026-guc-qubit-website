@@ -47,12 +47,45 @@ to update the event.
 | `src/data/schedule.ts` | Day-by-day agenda and track colours |
 | `src/data/speakers.ts` | Speaker roster |
 | `src/data/team.ts` | Organisers |
+| `src/data/timeline.ts` | Event roadmap. Flip a phase's `status` as it opens |
+| `src/data/venue.ts` | Address, coordinates, travel notes, GUC logo path |
 | `src/data/sponsors.ts` | Sponsor tiers |
 | `src/data/faq.ts` | FAQ |
 | `src/data/format.ts` | The four track cards |
 
 **Everything marked `TBA` is a placeholder** and needs replacing before launch:
-dates, venue, contact email, social links, speakers, team names, sponsors.
+dates, venue hall, contact email, social links, speakers, sponsors, and the
+three unfilled organiser slots.
+
+### The GUC logo
+
+`venue.logoSrc` is `null`, so the site renders a typographic GUC lockup. To use
+the real mark, drop the file into `public/` and point at it:
+
+```ts
+// src/data/venue.ts
+logoSrc: "/guc-logo.svg",
+```
+
+It defaults to type rather than an image on purpose — the page never ships a
+broken asset, and never an approximation of a mark we do not have.
+
+### Registration endpoint
+
+The form at the end of the page POSTs JSON to
+`NEXT_PUBLIC_REGISTRATION_ENDPOINT` (see `.env.example`). Any service that
+accepts a JSON POST works — Formspree, Getform, a Google Apps Script web app,
+or your own API route.
+
+While that variable is unset the form validates normally but reports
+*"registration isn't open yet"* on submit, rather than silently discarding
+entries. Set it when registration opens.
+
+### Map
+
+The venue map is a keyless OpenStreetMap embed centred on the GUC campus
+(29.98758°N, 31.44182°E) — no API key, no third-party ad cookies on visitors.
+"Get directions" hands off to Google Maps.
 
 ## Architecture notes
 
@@ -66,6 +99,12 @@ dates, venue, contact email, social links, speakers, team names, sponsors.
 - **The decade section measures itself** rather than slicing global page
   progress, so the year in the sticky card, the qubit count, and the lattice
   density always describe the milestone actually on screen.
+- **Grids use per-cell hairlines**, not the `gap-px` + container-background
+  trick. A partial last row then simply ends, instead of painting empty cells
+  as phantom cards.
+- **The timeline rail reveals as one unit.** Items further along a
+  horizontally-scrolling rail never intersect the viewport, so a per-item
+  IntersectionObserver would leave them stuck invisible.
 - **WebGL is optional.** The canvas mounts after first paint, and bails out
   entirely for `prefers-reduced-motion`, missing WebGL, or low-power devices
   (falling back to a CSS wash). Low-power devices get a smaller lattice and

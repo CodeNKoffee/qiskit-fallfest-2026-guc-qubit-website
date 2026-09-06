@@ -26,13 +26,20 @@ export default function Sponsors() {
                   )}
                 </div>
 
-                <ul className="mt-5 grid gap-px overflow-hidden rounded-2xl sm:grid-cols-2 lg:grid-cols-3"
-                    style={{ background: "var(--line)" }}>
+                <div
+                  className="mt-5 overflow-hidden rounded-2xl"
+                  style={{ border: "1px solid var(--line)" }}
+                >
+                <ul className="-mb-px -mr-px grid sm:grid-cols-2 lg:grid-cols-3">
                   {tier.sponsors.map((s, i) => (
                     <li key={`${s.name}-${i}`}>
                       <div
                         className="flex h-28 items-center justify-center p-6 text-center"
-                        style={{ background: "var(--surface)" }}
+                        style={{
+                          background: "var(--surface)",
+                          borderRight: "1px solid var(--line)",
+                          borderBottom: "1px solid var(--line)",
+                        }}
                       >
                         {s.href ? (
                           <a
@@ -55,6 +62,7 @@ export default function Sponsors() {
                     </li>
                   ))}
                 </ul>
+                </div>
               </div>
             </Reveal>
           ))}

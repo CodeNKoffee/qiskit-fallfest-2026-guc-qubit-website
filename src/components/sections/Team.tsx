@@ -14,20 +14,27 @@ export default function Team() {
           lede={`Every Qiskit Fall Fest event is organised by students on their own campus. This one is ${event.hostLong} at the ${event.university}.`}
         />
 
-        <ul className="grid gap-px overflow-hidden rounded-2xl sm:grid-cols-2 lg:grid-cols-4"
-            style={{ background: "var(--line)" }}>
+        <div className="overflow-hidden rounded-2xl" style={{ border: "1px solid var(--line)" }}>
+        <ul className="-mb-px -mr-px grid sm:grid-cols-2 lg:grid-cols-3">
           {team.map((m, i) => (
-            <Reveal as="li" key={`${m.role}-${i}`} i={i % 4}>
-              <div className="h-full p-7" style={{ background: "var(--surface)" }}>
+            <Reveal as="li" key={`${m.role}-${i}`} i={i % 3}>
+              <div
+                className="h-full p-7"
+                style={{
+                  background: "var(--surface)",
+                  borderRight: "1px solid var(--line)",
+                  borderBottom: "1px solid var(--line)",
+                }}
+              >
                 <p
                   className="font-mono text-xs tracking-[0.14em]"
-                  style={{ color: "var(--color-signal)" }}
+                  style={{ color: m.confirmed ? "var(--color-signal)" : "var(--ink-faint)" }}
                 >
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3
                   className="mt-5 text-xl font-medium tracking-[-0.02em]"
-                  style={{ color: m.name === "TBA" ? "var(--ink-faint)" : "var(--ink)" }}
+                  style={{ color: m.confirmed ? "var(--ink)" : "var(--ink-faint)" }}
                 >
                   {m.name}
                 </h3>
@@ -38,6 +45,7 @@ export default function Team() {
             </Reveal>
           ))}
         </ul>
+        </div>
       </div>
     </Section>
   );
