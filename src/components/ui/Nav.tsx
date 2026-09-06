@@ -78,7 +78,11 @@ export default function Nav() {
         }}
       >
         <nav className="shell flex h-[68px] items-center justify-between gap-6">
-          <Link href="/" className="group flex items-center gap-2.5" style={{ color: ink }}>
+          <Link
+            href="/"
+            className="group -my-2 flex min-h-11 items-center gap-2.5 py-2"
+            style={{ color: ink }}
+          >
             <QubitMark dark={dark} />
             <span className="text-[15px] font-medium tracking-tight">
               {event.host}
@@ -104,7 +108,7 @@ export default function Nav() {
           <div className="flex items-center gap-3">
             <Link
               href="/#register"
-              className="hidden rounded-full px-5 py-2.5 text-[13.5px] font-medium transition-transform hover:scale-[1.03] sm:inline-block"
+              className="hidden min-h-11 items-center rounded-full px-5 text-[13.5px] font-medium transition-transform hover:scale-[1.03] sm:inline-flex"
               style={{ background: cta, color: ctaInk }}
             >
               Register
@@ -115,7 +119,7 @@ export default function Nav() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-label={open ? "Close menu" : "Open menu"}
-              className="flex h-10 w-10 items-center justify-center rounded-full lg:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-full lg:hidden"
               style={{ border: `1px solid ${hairline}`, color: ink }}
             >
               <span className="relative block h-3 w-4">

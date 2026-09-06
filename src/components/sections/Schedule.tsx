@@ -37,7 +37,7 @@ export default function Schedule() {
                 aria-controls={`panel-${d.id}`}
                 id={`tab-${d.id}`}
                 onClick={() => setDayIdx(i)}
-                className="shrink-0 rounded-full px-5 py-2.5 text-sm font-medium transition-all"
+                className="inline-flex min-h-11 shrink-0 items-center rounded-full px-5 text-sm font-medium transition-all"
                 style={{
                   background: selected ? "var(--color-quantum)" : "transparent",
                   color: selected ? "#fff" : "var(--ink-muted)",
@@ -62,7 +62,7 @@ export default function Schedule() {
                 type="button"
                 aria-pressed={selected}
                 onClick={() => setFilter(t)}
-                className="shrink-0 rounded-full px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] transition-all"
+                className="inline-flex min-h-11 shrink-0 items-center rounded-full px-4 font-mono text-[11px] uppercase tracking-[0.12em] transition-all"
                 style={{
                   border: `1px solid ${selected ? "var(--ink)" : "var(--line)"}`,
                   color: selected ? "var(--ink)" : "var(--ink-faint)",

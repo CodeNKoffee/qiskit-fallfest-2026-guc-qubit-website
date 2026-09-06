@@ -83,9 +83,18 @@ entries. Set it when registration opens.
 
 ### Map
 
-The venue map is a keyless OpenStreetMap embed centred on the GUC campus
-(29.98758°N, 31.44182°E) — no API key, no third-party ad cookies on visitors.
-"Get directions" hands off to Google Maps.
+The venue map is a Google Maps embed centred on the GUC campus
+(29.98758°N, 31.44182°E). It uses Google's keyless `output=embed` form by
+default, so it works with no setup and no billing account.
+
+Set `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` to switch to the official
+[Maps Embed API](https://developers.google.com/maps/documentation/embed/get-api-key)
+— that is the supported, documented endpoint, and worth doing before launch.
+Either way "Get directions" hands off to Google Maps directions.
+
+The map panel scales with the viewport on phones
+(`clamp(19rem, 58vw, 34rem)`) and settles at a fixed height once the layout
+goes two-column.
 
 ## Architecture notes
 
@@ -105,6 +114,9 @@ The venue map is a keyless OpenStreetMap embed centred on the GUC campus
 - **The timeline rail reveals as one unit.** Items further along a
   horizontally-scrolling rail never intersect the viewport, so a per-item
   IntersectionObserver would leave them stuck invisible.
+- **Interactive controls are at least 44x44px** on touch viewports — day
+  tabs, filters, track pills, the nav CTA and the menu button. Inline links
+  inside prose are exempt by design.
 - **WebGL is optional.** The canvas mounts after first paint, and bails out
   entirely for `prefers-reduced-motion`, missing WebGL, or low-power devices
   (falling back to a CSS wash). Low-power devices get a smaller lattice and

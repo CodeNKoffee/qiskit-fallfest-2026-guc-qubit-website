@@ -1,4 +1,4 @@
-import { venue, mapEmbedSrc, directionsUrl, osmUrl } from "@/data/venue";
+import { venue, mapEmbedSrc, directionsUrl, largerMapUrl } from "@/data/venue";
 import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
 import Reveal from "../ui/Reveal";
@@ -51,7 +51,7 @@ export default function Venue() {
                   Get directions
                 </a>
                 <a
-                  href={osmUrl}
+                  href={largerMapUrl}
                   target="_blank"
                   rel="noreferrer noopener"
                   className="rounded-full px-6 py-3 text-sm font-medium"
@@ -80,8 +80,8 @@ export default function Venue() {
           </div>
 
           {/* Map */}
-          <Reveal i={1}>
-            <figure className="h-full">
+          <Reveal i={1} className="lg:sticky lg:top-28 lg:h-fit">
+            <figure>
               <div
                 className="relative overflow-hidden rounded-2xl"
                 style={{ border: "1px solid var(--line)" }}
@@ -90,25 +90,22 @@ export default function Venue() {
                   src={mapEmbedSrc}
                   title={`Map showing ${venue.name} in ${venue.city}`}
                   loading="lazy"
+                  allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="block h-[380px] w-full md:h-[560px]"
-                  style={{ border: 0 }}
+                  className="block w-full"
+                  style={{
+                    border: 0,
+                    // Grows with the viewport on phones, settles at a fixed
+                    // height once the layout goes two-column.
+                    height: "clamp(19rem, 58vw, 34rem)",
+                  }}
                 />
               </div>
               <figcaption
                 className="mt-3 font-mono text-xs"
                 style={{ color: "var(--ink-faint)" }}
               >
-                {venue.lat.toFixed(5)}°N, {venue.lon.toFixed(5)}°E · map ©{" "}
-                <a
-                  href="https://www.openstreetmap.org/copyright"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  style={{ textDecoration: "underline" }}
-                >
-                  OpenStreetMap
-                </a>{" "}
-                contributors
+                {venue.lat.toFixed(5)}°N, {venue.lon.toFixed(5)}°E · Google Maps
               </figcaption>
             </figure>
           </Reveal>

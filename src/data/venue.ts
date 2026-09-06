@@ -41,12 +41,26 @@ export const venue = {
   ],
 } as const;
 
-/** Keyless OSM embed, framed tightly on campus. */
-export const mapEmbedSrc = (() => {
-  const d = 0.008;
-  const bbox = [venue.lon - d, venue.lat - d, venue.lon + d, venue.lat + d].join(",");
-  return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${venue.lat},${venue.lon}`;
-})();
+/**
+ * Google Maps embed.
+ *
+ * Defaults to the keyless `output=embed` form, which needs no setup and no
+ * billing account. Set NEXT_PUBLIC_GOOGLE_MAPS_API_KEY to switch to the
+ * official Maps Embed API instead — that is the supported, documented
+ * endpoint, and worth doing before the site goes public.
+ */
+const GOOGLE_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
 
-export const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${venue.lat},${venue.lon}`;
-export const osmUrl = `https://www.openstreetmap.org/?mlat=${venue.lat}&mlon=${venue.lon}#map=16/${venue.lat}/${venue.lon}`;
+/** Pin at the exact campus coordinates, labelled with the venue name. */
+const pin = `${venue.lat},${venue.lon}`;
+
+export const mapEmbedSrc = GOOGLE_KEY
+  ? `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_KEY}&q=${encodeURIComponent(
+      pin
+    )}&zoom=16&maptype=roadmap`
+  : `https://maps.google.com/maps?q=${encodeURIComponent(
+      `${pin} (${venue.name})`
+    )}&z=16&hl=en&output=embed`;
+
+export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${pin}`;
+export const largerMapUrl = `https://www.google.com/maps/search/?api=1&query=${pin}`;

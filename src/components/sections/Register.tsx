@@ -212,7 +212,7 @@ export default function Register() {
                       type="button"
                       aria-pressed={on}
                       onClick={() => toggleTrack(t.id)}
-                      className="rounded-full px-5 py-2.5 text-sm font-medium transition-all"
+                      className="inline-flex min-h-11 items-center rounded-full px-5 text-sm font-medium transition-all"
                       style={{
                         background: on ? "var(--color-quantum)" : "transparent",
                         color: on ? "#fff" : "var(--ink-muted)",
