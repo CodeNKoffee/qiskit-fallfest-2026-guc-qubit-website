@@ -19,11 +19,13 @@ export default function Hero() {
       />
 
       <div className="shell w-full">
-        <Reveal>
-          <p className="eyebrow">
-            {event.city} · {event.dates}
-          </p>
-        </Reveal>
+        {(event.city || event.dates) && (
+          <Reveal>
+            <p className="eyebrow">
+              {event.city && event.dates ? `${event.city} · ${event.dates}` : event.city || event.dates}
+            </p>
+          </Reveal>
+        )}
 
         <Reveal i={1}>
           <h1 className="mt-6 text-balance text-[13vw] font-medium leading-[0.87] tracking-[-0.045em] sm:text-[10vw] lg:text-[8.5rem]">
@@ -45,19 +47,21 @@ export default function Hero() {
 
           <Reveal i={3}>
             <div className="flex flex-wrap items-center gap-3">
-              <Link
+              <a
                 href={event.registerUrl}
+                target="_blank"
+                rel="noreferrer noopener"
                 className="rounded-full px-7 py-3.5 text-[15px] font-medium transition-transform hover:scale-[1.03]"
                 style={{ background: "var(--color-quantum)", color: "#fff" }}
               >
                 Register — it&rsquo;s free
-              </Link>
+              </a>
               <Link
-                href="#decade"
+                href="#timeline"
                 className="rounded-full px-7 py-3.5 text-[15px] font-medium transition-colors"
                 style={{ border: "1px solid var(--line-strong)", color: "var(--ink)" }}
               >
-                Ten years in
+                See timeline
               </Link>
             </div>
           </Reveal>

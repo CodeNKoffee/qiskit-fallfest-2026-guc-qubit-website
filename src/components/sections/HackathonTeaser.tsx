@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { event } from "@/data/event";
 import Section from "../ui/Section";
 import Reveal from "../ui/Reveal";
 
@@ -55,13 +55,15 @@ export default function HackathonTeaser() {
               </p>
             </Reveal>
             <Reveal i={3}>
-              <Link
-                href="/hackathon"
+              <a
+                href={event.hackathonTeamUrl}
+                target="_blank"
+                rel="noreferrer noopener"
                 className="mt-10 inline-block rounded-full px-7 py-3.5 text-[15px] font-medium transition-transform hover:scale-[1.03]"
                 style={{ background: "var(--color-signal)", color: "#05040a" }}
               >
-                Rules, tracks &amp; judging
-              </Link>
+                Join the hackathon team list
+              </a>
             </Reveal>
           </div>
 

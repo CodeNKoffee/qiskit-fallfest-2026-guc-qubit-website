@@ -25,20 +25,7 @@ export const venue = {
   lat: 29.98758,
   lon: 31.44182,
 
-  gettingHere: [
-    {
-      t: "By car",
-      d: "Enter via the main entrance on El-Tagamoa El-Khames. Visitor parking is on campus — bring your student ID or your registration confirmation for the gate.",
-    },
-    {
-      t: "By GUC bus",
-      d: "All regular GUC bus lines run to campus on event days. Check the university bus schedule for your line.",
-    },
-    {
-      t: "On the day",
-      d: "Check-in is at the venue entrance from 09:00. Look for the Qiskit Fall Fest signage and the Qubit team.",
-    },
-  ],
+  gettingHere: [],
 } as const;
 
 /**

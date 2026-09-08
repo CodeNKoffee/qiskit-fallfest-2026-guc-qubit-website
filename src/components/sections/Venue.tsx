@@ -62,21 +62,6 @@ export default function Venue() {
               </div>
             </Reveal>
 
-            <dl className="mt-10">
-              {venue.gettingHere.map((g, i) => (
-                <Reveal key={g.t} i={i}>
-                  <div className="py-5" style={{ borderTop: "1px solid var(--line)" }}>
-                    <dt className="text-base font-medium">{g.t}</dt>
-                    <dd
-                      className="mt-1.5 text-pretty text-sm leading-relaxed"
-                      style={{ color: "var(--ink-muted)" }}
-                    >
-                      {g.d}
-                    </dd>
-                  </div>
-                </Reveal>
-              ))}
-            </dl>
           </div>
 
           {/* Map */}

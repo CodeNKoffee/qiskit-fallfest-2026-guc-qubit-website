@@ -5,13 +5,11 @@ import Link from "next/link";
 import { event } from "@/data/event";
 
 const links = [
-  { href: "/#decade", label: "The decade" },
   { href: "/#timeline", label: "Timeline" },
   { href: "/#schedule", label: "Schedule" },
-  { href: "/#speakers", label: "Speakers" },
   { href: "/hackathon", label: "Hackathon" },
   { href: "/#venue", label: "Venue" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "/#team", label: "Organisers" },
 ];
 
 export default function Nav() {
@@ -106,13 +104,15 @@ export default function Nav() {
           </ul>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="/#register"
+            <a
+              href={event.registerUrl}
+              target="_blank"
+              rel="noreferrer noopener"
               className="hidden min-h-11 items-center rounded-full px-5 text-[13.5px] font-medium transition-transform hover:scale-[1.03] sm:inline-flex"
               style={{ background: cta, color: ctaInk }}
             >
               Register
-            </Link>
+            </a>
 
             <button
               type="button"
@@ -167,14 +167,16 @@ export default function Nav() {
             </li>
           ))}
           <li className="mt-6">
-            <Link
-              href="/#register"
+            <a
+              href={event.registerUrl}
+              target="_blank"
+              rel="noreferrer noopener"
               onClick={() => setOpen(false)}
               className="inline-block rounded-full px-7 py-3.5 text-base font-medium"
               style={{ background: cta, color: ctaInk }}
             >
               Register
-            </Link>
+            </a>
           </li>
         </ul>
       </div>

@@ -11,9 +11,11 @@ export default function Footer() {
             <p className="mt-2 max-w-sm text-pretty" style={{ color: "var(--ink-muted)" }}>
               Hosted by {event.hostLong} at the {event.university}.
             </p>
-            <p className="mt-6 font-mono text-xs" style={{ color: "var(--ink-faint)" }}>
-              {event.city} · {event.dates}
-            </p>
+            {(event.city || event.dates) && (
+              <p className="mt-6 font-mono text-xs" style={{ color: "var(--ink-faint)" }}>
+                {event.city && event.dates ? `${event.city} · ${event.dates}` : event.city || event.dates}
+              </p>
+            )}
           </div>
 
           <nav aria-label="Site">
@@ -25,8 +27,6 @@ export default function Footer() {
                 { href: "/hackathon", label: "Hackathon" },
                 { href: "/#team", label: "Organisers" },
                 { href: "/#venue", label: "Venue & map" },
-                { href: "/resources", label: "Resources" },
-                { href: "/code-of-conduct", label: "Code of conduct" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} style={{ color: "var(--ink-muted)" }}>

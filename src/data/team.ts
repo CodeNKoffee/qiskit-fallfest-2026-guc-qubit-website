@@ -9,7 +9,7 @@ export type Member = {
 export const team: Member[] = [
   { name: "Hatem Soliman", role: "Lead organizer", confirmed: true },
   { name: "Youssef Adel", role: "Co-organizer", confirmed: true },
-  { name: "TBA", role: "Workshops & labs" },
-  { name: "TBA", role: "Hackathon" },
-  { name: "TBA", role: "Partnerships & outreach" },
+  { name: "Islam Salem", role: "Co-organizer", confirmed: true },
+  { name: "Abu-bakr", role: "Co-organizer", confirmed: true },
+  { name: "Mohamed Walid", role: "Co-organizer", confirmed: true },
 ];

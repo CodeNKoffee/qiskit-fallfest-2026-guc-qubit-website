@@ -20,8 +20,8 @@ export default function Schedule() {
       <div className="shell">
         <SectionHeading
           eyebrow="Schedule"
-          title="Three days, start to finish."
-          lede="Times and rooms are provisional until the final programme is confirmed."
+          title="To be announced"
+          lede="The detailed daily programme will be shared closer to the event."
         />
 
         {/* Day tabs */}
@@ -92,7 +92,7 @@ export default function Schedule() {
             <ul>
               {sessions.map((s, i) => (
                 <li
-                  key={`${day.id}-${s.time}-${s.title}`}
+                  key={`${day.id}-${s.time}-${s.title}-${i}`}
                   className="grid grid-cols-[4.5rem_1fr] items-baseline gap-x-5 gap-y-1 py-5 md:grid-cols-[6rem_1fr_10rem] md:gap-x-8"
                   style={{ borderTop: i === 0 ? "none" : "1px solid var(--line)" }}
                 >

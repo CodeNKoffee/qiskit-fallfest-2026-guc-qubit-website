@@ -19,21 +19,13 @@ const rules = [
     d: "Other open-source libraries and APIs are allowed, as long as they are properly credited in your submission.",
   },
   {
-    t: "Build it here",
-    d: "All development has to happen inside the hackathon window. Bringing a half-finished project is not allowed.",
-  },
-  {
     t: "Your own work",
     d: "No plagiarism and no undisclosed pre-built code. Anything you did not write, you declare.",
   },
   {
     t: "Follow the prompt",
     d: "Submissions are judged against the prompt released at the start. Off-prompt projects are not eligible.",
-  },
-  {
-    t: "Be decent",
-    d: "The event code of conduct applies for the whole hackathon, on and offline.",
-  },
+  }
 ];
 
 const criteria = [
@@ -54,14 +46,12 @@ export default function HackathonPage() {
           <Reveal i={1}>
             <h1 className="mt-5 max-w-4xl text-balance text-5xl font-medium leading-[0.95] tracking-[-0.04em] md:text-8xl">
               One prompt.
-              <br />
-              One working session.
             </h1>
           </Reveal>
           <Reveal i={2}>
             <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed" style={{ color: "var(--ink-muted)" }}>
-              The prompt is released at the close of day two. You build against it
-              overnight and through day three, then present to a judging panel.
+              The prompt is released at the end of the opening. You build against it
+              through the week, then present to a judging panel.
               Everyone who takes part receives an IBM Quantum certificate.
             </p>
           </Reveal>
@@ -113,7 +103,7 @@ export default function HackathonPage() {
               >
                 <p className="eyebrow">Prizes</p>
                 <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
-                  Prize pool and category awards to be announced. IBM Quantum
+                  IBM Winner Certificates for the top 3. IBM Quantum
                   certificates for all participants.
                 </p>
               </div>
@@ -129,13 +119,6 @@ export default function HackathonPage() {
           >
             Register for the hackathon
           </Link>
-          <p className="mt-6 text-sm" style={{ color: "var(--ink-faint)" }}>
-            Read the{" "}
-            <Link href="/code-of-conduct" style={{ color: "var(--ink-muted)", textDecoration: "underline" }}>
-              code of conduct
-            </Link>{" "}
-            before you register — it applies to everyone.
-          </p>
         </div>
       </Section>
     </>

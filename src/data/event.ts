@@ -8,7 +8,7 @@ export const event = {
   hostLong: "Qubit — Quantum Computing Club",
   university: "German University in Cairo",
   universityShort: "GUC",
-  city: "Cairo, Egypt",
+  city: "",
   venue: "TBA — GUC Campus, New Cairo",
 
   /** IBM's official 2026 theme. */
@@ -16,18 +16,18 @@ export const event = {
   themeBlurb:
     "Ten years since IBM put the world's first quantum computer on the cloud — and opened the field to everyone.",
 
-  dates: "TBA — October 2026",
-  datesISO: { start: "2026-10-01", end: "2026-10-03" },
+  dates: "",
+  datesISO: { start: "TBA", end: "TBA" },
 
-  registerUrl: "#register",
+  registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdF2yXzUKRcqW94SU6yoFV_7ODHgwXQ3omjFKnfcSNSJEBoxA/viewform?usp=publish-editor",
+  hackathonTeamUrl: "https://docs.google.com/forms/d/e/1FAIpQLScOSYtgJ8CUMWNpiWqqzt2lokLMooRJMAA11R8Htn6jnx0zpQ/viewform?usp=publish-editor",
   tagline: "Quantum computing, opened up. On our campus.",
 
-  contactEmail: "TBA@guc.edu.eg",
+  contactEmail: "qubitclub.guc@gmail.com",
   socials: [
-    { label: "Instagram", href: "#" },
-    { label: "LinkedIn", href: "#" },
+    { label: "Instagram", href: "https://www.instagram.com/qubitguc?stkn=ODdwYTI5cWp1Y3V6" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/qubit-guc-quantum-computing-club" },
     { label: "Discord", href: "#" },
-    { label: "GitHub", href: "#" },
   ],
 } as const;
 
