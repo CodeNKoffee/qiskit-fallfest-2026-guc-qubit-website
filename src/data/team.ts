@@ -5,15 +5,11 @@ export type Member = {
   confirmed?: boolean;
 };
 
-/**
- * Functional titles only — no "Organizer" / "Co-Organizer", which collide
- * with IBM's own naming for the Fall Fest host programme.
- */
 export const team: Member[] = [
-  { name: "Islam Salem", role: "President, QubitGUC", confirmed: true },
-  { name: "Hatem Soliman", role: "GUC Operations Liaison", confirmed: true },
-  { name: "Youssef Adel", role: "Committee Member", confirmed: true },
-  { name: "Abu-bakr", role: "Committee Member", confirmed: true },
-  { name: "Mohamed Walid", role: "Committee Member", confirmed: true },
+  { name: "Hatem Soliman", role: "Lead organizer", confirmed: true },
+  { name: "Islam Salem", role: "Co-organizer", confirmed: true },
+  { name: "Youssef Adel", role: "Co-organizer", confirmed: true },
+  { name: "Abu-bakr", role: "Co-organizer", confirmed: true },
+  { name: "Mohamed Walid", role: "Co-organizer", confirmed: true },
   { name: "[Committee in process of being finalized]", role: "TBD" },
 ];

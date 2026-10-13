@@ -57,5 +57,11 @@ export const mapEmbedSrc = GOOGLE_KEY
       `${pin} (${venue.name})`
     )}&z=16&hl=en&output=embed`;
 
-export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${pin}`;
-export const largerMapUrl = `https://www.google.com/maps/search/?api=1&query=${pin}`;
+/**
+ * The shared Google Maps pin for Gate 3, where every attendee enters. Both
+ * buttons open it directly so people navigate to the gate, not the campus
+ * centre the embed above is framed on.
+ */
+export const gateMapUrl = "https://maps.app.goo.gl/a6CCvqLiAaHfDezh8";
+export const directionsUrl = gateMapUrl;
+export const largerMapUrl = gateMapUrl;

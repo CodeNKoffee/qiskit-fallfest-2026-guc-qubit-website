@@ -119,7 +119,7 @@ export default function Venue() {
                 />
               </div>
               <figcaption className="mt-3 font-mono text-xs" style={{ color: "var(--ink-faint)" }}>
-                {venue.lat.toFixed(5)}°N, {venue.lon.toFixed(5)}°E · Google Maps · pin marks the campus, enter via {venue.gate}
+                {venue.lat.toFixed(5)}°N, {venue.lon.toFixed(5)}°E · Google Maps · map shows the campus; the buttons above open the {venue.gate} pin
               </figcaption>
             </figure>
           </Reveal>
