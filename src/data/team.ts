@@ -1,15 +1,19 @@
 export type Member = {
   name: string;
   role: string;
-  /** Marks the confirmed core so placeholders read as pending, not fake. */
+  /** Marks a confirmed member so open slots read as pending, not as people. */
   confirmed?: boolean;
 };
 
-/** Fall Fest is student-led by design — this section is the point, not filler. */
+/**
+ * Functional titles only — no "Organizer" / "Co-Organizer", which collide
+ * with IBM's own naming for the Fall Fest host programme.
+ */
 export const team: Member[] = [
-  { name: "Hatem Soliman", role: "Lead organizer", confirmed: true },
-  { name: "Youssef Adel", role: "Co-organizer", confirmed: true },
-  { name: "Islam Salem", role: "Co-organizer", confirmed: true },
-  { name: "Abu-bakr", role: "Co-organizer", confirmed: true },
-  { name: "Mohamed Walid", role: "Co-organizer", confirmed: true },
+  { name: "Islam Salem", role: "President, QubitGUC", confirmed: true },
+  { name: "Hatem Soliman", role: "GUC Operations Liaison", confirmed: true },
+  { name: "Youssef Adel", role: "Committee Member", confirmed: true },
+  { name: "Abu-bakr", role: "Committee Member", confirmed: true },
+  { name: "Mohamed Walid", role: "Committee Member", confirmed: true },
+  { name: "[Committee in process of being finalized]", role: "TBD" },
 ];

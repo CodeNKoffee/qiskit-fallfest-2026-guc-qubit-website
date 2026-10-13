@@ -1,75 +1,57 @@
-export type PhaseStatus = "done" | "live" | "upcoming";
-
-export type Phase = {
-  id: string;
-  label: string;
-  /** Date string — kept free-form while the programme is unconfirmed. */
+export type Step = {
+  n: string;
+  /** Weekday and dd/mm, as the programme is published locally. */
   when: string;
   title: string;
   body: string;
-  status: PhaseStatus;
 };
 
 /**
- * The event roadmap — distinct from the day-by-day agenda in `schedule.ts`.
- * This is the "where are we in the run-up" view. Flip `status` as each
- * phase opens; the rail fills to the last non-upcoming phase automatically.
+ * The Symposium Timeline — one linear programme, Sunday 8 to Tuesday
+ * 17 November 2026. Anything in [square brackets] is a placeholder and is
+ * rendered in monospace so it reads as pending rather than as copy.
  */
-export const phases: Phase[] = [
+export const steps: Step[] = [
   {
-    id: "opening",
-    label: "01",
+    n: "01",
     when: "Sunday 8/11",
     title: "Opening",
-    body: "The event kicks off with the opening session and first welcome to the programme.",
-    status: "live",
+    body: "The event kicks off with the opening session and your first welcome to the program, as well as the hackathon theme announcement.",
   },
   {
-    id: "session-1",
-    label: "02",
-    when: "Monday",
+    n: "02",
+    when: "Monday 9/11",
     title: "Session 1",
-    body: "Core workshop content and hands-on learning for the first technical session.",
-    status: "upcoming",
+    body: "Core workshop content and beginner-friendly hands-on learning for the first technical session.",
   },
   {
-    id: "session-2",
-    label: "03",
-    when: "Wednesday",
+    n: "03",
+    when: "Wednesday 11/11",
     title: "Session 2",
-    body: "The second session continues the technical track and deeper labs.",
-    status: "upcoming",
+    body: "The second session continues the technical track and introduces deeper hands-on sessions (bring your laptop).",
   },
   {
-    id: "session-3-guest",
-    label: "04",
-    when: "Thursday",
-    title: "Session 3 / Guest Speaker",
-    body: "A featured guest talk alongside the third main session of the event.",
-    status: "upcoming",
+    n: "04",
+    when: "Thursday 12/11",
+    title: "Session 3 & Guest Speaker",
+    body: "A featured guest talk [Speaker TBA] alongside the third main technical session of the event (bring your laptop).",
   },
   {
-    id: "guest-speaker-2",
-    label: "05",
-    when: "Saturday",
-    title: "Guest Speaker",
-    body: "An additional guest session is scheduled mid-week to expand the programme.",
-    status: "upcoming",
+    n: "05",
+    when: "Saturday 14/11",
+    title: "Featured Guest Speaker",
+    body: "An additional guest session [Speaker TBA] is scheduled mid-week to expand the program and share industry insights.",
   },
   {
-    id: "session-3-guest-2",
-    label: "06",
-    when: "Sunday",
-    title: "Session 3 / Guest Speaker",
-    body: "The programme continues with another technical session and guest appearance.",
-    status: "upcoming",
+    n: "06",
+    when: "Sunday 15/11",
+    title: "Technical Session & Guest Speaker",
+    body: "The program continues with another focused technical session and an additional guest appearance [Speaker TBA].",
   },
   {
-    id: "presentations-closing",
-    label: "07",
-    when: "Tuesday",
-    title: "Presentations + closing",
-    body: "Final project presentations and the close of the event programme.",
-    status: "upcoming",
+    n: "07",
+    when: "Tuesday 17/11",
+    title: "Presentations & Closing",
+    body: "Final capstone project presentations, official IBM certification awards, and the close of the event.",
   },
 ];

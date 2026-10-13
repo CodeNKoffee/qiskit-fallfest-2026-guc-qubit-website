@@ -77,7 +77,7 @@ function StaticField({ dimmed }: { dimmed: boolean }) {
       style={{
         opacity: dimmed ? 0.5 : 0.8,
         backgroundImage:
-          "radial-gradient(circle at 22% 18%, rgb(5 48 173 / 0.10), transparent 42%), radial-gradient(circle at 78% 62%, rgb(105 41 196 / 0.10), transparent 46%)",
+          "radial-gradient(circle at 22% 18%, rgb(15 98 254 / 0.10), transparent 42%), radial-gradient(circle at 78% 62%, rgb(138 63 252 / 0.10), transparent 46%)",
       }}
     />
   );

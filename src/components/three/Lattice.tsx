@@ -8,10 +8,10 @@ import { decade } from "@/data/decade";
 import { scrollState, setMilestone } from "@/lib/scroll";
 import { clamp, lerp } from "@/lib/motion";
 
-const VERTEX_COLOR = new THREE.Color("#0530ad"); // IBM Quantum blue
-const EDGE_COLOR = new THREE.Color("#6929c4");   // Qiskit purple
+const VERTEX_COLOR = new THREE.Color("#0f62fe"); // IBM Quantum blue
+const EDGE_COLOR = new THREE.Color("#8a3ffc");   // Qiskit purple
 const SIGNAL_COLOR = new THREE.Color("#6fe3d4"); // ice teal, dark half
-const DORMANT_LIGHT = new THREE.Color("#cfcbc2");
+const DORMANT_LIGHT = new THREE.Color("#dcd8cf");
 const DORMANT_DARK = new THREE.Color("#2b2a3d");
 
 const dummy = new THREE.Object3D();
@@ -77,7 +77,7 @@ export default function Lattice({ rings, quality }: Props) {
     // The Decade section measures its own position and publishes it, so the
     // lattice density tracks the milestone genuinely on screen rather than a
     // guessed slice of page progress.
-    const decadeT = clamp(scrollState.decade);
+    const decadeT = scrollState.decadeLive ? clamp(scrollState.decade) : clamp(p / 0.7);
     const slot = decadeT * (decade.length - 1);
 
     // Interpolate qubit count between milestones so the lattice grows

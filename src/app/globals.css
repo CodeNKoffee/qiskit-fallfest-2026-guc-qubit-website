@@ -15,15 +15,19 @@
   --color-void-soft: #12111c;
 
   /* Brand */
-  --color-quantum-900: #04206f;
-  --color-quantum: #0530ad;        /* IBM blue */
-  --color-quantum-400: #5596e6;
-  --color-qiskit: #6929c4;         /* Qiskit purple */
+  --color-quantum-900: #002d9c;
+  --color-quantum: #0f62fe;        /* IBM Blue 60 */
+  --color-quantum-ink: #0043ce;    /* Blue 70 — small text on light grounds (AA) */
+  --color-quantum-400: #78a9ff;
+  --color-qiskit: #8a3ffc;         /* IBM Purple 60 */
+  --color-qiskit-ink: #6929c4;     /* Purple 70 — small text on light grounds (AA) */
+  --color-qiskit-400: #be95ff;
   --color-aubergine: #4a2545;
 
   /* Signal */
   --color-signal: #6fe3d4;         /* ice teal — lattice glow */
   --color-ember: #ff7eb6;          /* accent for live/now states */
+  --color-sand: #c9a45c;           /* Nile-valley gold — the one Egypt cue, used sparingly */
 
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", monospace;
@@ -48,6 +52,7 @@
   --accent: var(--color-quantum);
   --accent-ink: #ffffff;
   --glow: var(--color-qiskit);
+  --grid: rgb(20 19 26 / 0.05);
 }
 
 [data-tone="dark"] {
@@ -62,6 +67,7 @@
   --accent: var(--color-signal);
   --accent-ink: #05040a;
   --glow: var(--color-signal);
+  --grid: rgb(244 243 247 / 0.055);
 }
 
 @layer base {
@@ -87,6 +93,10 @@
   /* Sections carry their own ground so the inversion is seamless */
   [data-tone] {
     background-color: var(--surface);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 64px 64px;
     color: var(--ink);
   }
 
@@ -123,6 +133,16 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--ink-faint);
+  }
+  /* A short gold rule before every eyebrow: the Egypt cue, kept quiet. */
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 1.1rem;
+    height: 1px;
+    margin-right: 0.65rem;
+    vertical-align: middle;
+    background: var(--color-sand);
   }
 
   .rule {

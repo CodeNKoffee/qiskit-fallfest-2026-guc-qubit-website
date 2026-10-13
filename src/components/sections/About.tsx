@@ -1,53 +1,38 @@
-import { event, globalStats } from "@/data/event";
 import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
 import Reveal from "../ui/Reveal";
+import Art from "../ui/Art";
 
 export default function About() {
   return (
-    <Section id="about" tone="light" className="py-24 md:py-32">
-      <div className="shell">
+    <Section id="about" tone="light" className="overflow-hidden py-24 md:py-32">
+      <Art
+        src="/art/birds-right.webp"
+        edge="right"
+        className="right-0 top-0 hidden h-full w-auto max-w-[46%] object-cover object-left md:block"
+      />
+
+      <div className="shell relative">
         <SectionHeading
-          eyebrow="What this is"
-          title={<>The world&rsquo;s largest student-run quantum event, on our campus.</>}
-          lede="Qiskit Fall Fest is a global series of quantum computing events — workshops, talks and hackathons run by students, for students, with support from IBM Quantum. This is our edition of it."
+          eyebrow="About the event"
+          title="Empowering Egypt's Quantum Community"
         />
 
-        <dl className="grid gap-px overflow-hidden rounded-2xl sm:grid-cols-2 lg:grid-cols-4"
-            style={{ background: "var(--line)" }}>
-          {globalStats.map((s, i) => (
-            <Reveal key={s.label} i={i} className="p-7" as="div">
-              <div style={{ background: "var(--surface)" }} className="h-full">
-                <dt
-                  className="font-mono text-4xl font-medium tabular-nums tracking-tight md:text-5xl"
-                  style={{ color: "var(--color-quantum)" }}
-                >
-                  {s.value}
-                </dt>
-                <dd className="mt-3 text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
-                  {s.label}
-                </dd>
-              </div>
-            </Reveal>
-          ))}
-        </dl>
-
-        <div className="mt-20 grid gap-12 md:grid-cols-2 md:gap-16">
+        <div className="grid gap-8 md:max-w-4xl md:grid-cols-2 md:gap-14">
           <Reveal>
-            <h3 className="text-2xl font-medium tracking-[-0.02em]">Why {event.universityShort}, why now</h3>
-            <p className="mt-4 text-pretty leading-relaxed" style={{ color: "var(--ink-muted)" }}>
-              Quantum computing stopped being a spectator sport the moment anyone
-              could run a circuit from a browser. A decade on, the barrier is no
-              longer access to hardware — it&rsquo;s knowing where to start. That is
-              exactly what this event is for.
+            <p className="text-pretty text-lg leading-relaxed" style={{ color: "var(--ink-muted)" }}>
+              Qiskit Fall Fest is a global series of quantum computing events supported by
+              IBM Quantum. Here in Egypt, the German University in Cairo (GUC) is proud to
+              be one of two exclusive host campuses for 2026, opening its doors to
+              innovators from all universities.
             </p>
           </Reveal>
           <Reveal i={1}>
-            <h3 className="text-2xl font-medium tracking-[-0.02em]">No background required</h3>
-            <p className="mt-4 text-pretty leading-relaxed" style={{ color: "var(--ink-muted)" }}>
-              Day one assumes nothing. You will write your first quantum circuit
-              before lunch, run it on real IBM hardware by day two, and defend a
-              project of your own by day three. Bring a laptop and some curiosity.
+            <p className="text-pretty text-lg leading-relaxed" style={{ color: "var(--ink-muted)" }}>
+              No prior quantum background is required. This educational fest is built from
+              the ground up for beginners. We will start with the foundational mechanics,
+              write your first Qiskit code, and work up to building a project in a
+              hackathon, then presenting it.
             </p>
           </Reveal>
         </div>

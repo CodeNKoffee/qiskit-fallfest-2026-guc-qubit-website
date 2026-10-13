@@ -6,7 +6,6 @@ import { event } from "@/data/event";
 
 const links = [
   { href: "/#timeline", label: "Timeline" },
-  { href: "/#schedule", label: "Schedule" },
   { href: "/hackathon", label: "Hackathon" },
   { href: "/#venue", label: "Venue" },
   { href: "/#team", label: "Organisers" },
@@ -45,7 +44,7 @@ export default function Nav() {
   const inkFaint = dark ? "#6b6880" : "#8a8794";
   const sheet = dark ? "rgb(8 7 13 / 0.82)" : "rgb(240 238 233 / 0.82)";
   const hairline = dark ? "rgb(244 243 247 / 0.12)" : "rgb(20 19 26 / 0.09)";
-  const cta = dark ? "#6fe3d4" : "#0530ad";
+  const cta = dark ? "#6fe3d4" : "#0f62fe";
   const ctaInk = dark ? "#05040a" : "#fff";
 
   // Lock the page while the mobile sheet is open.
@@ -186,8 +185,8 @@ export default function Nav() {
 
 /** Bloch-sphere-ish mark: a qubit state vector on a ring. */
 function QubitMark({ dark }: { dark: boolean }) {
-  const ring = dark ? "#6fe3d4" : "#0530ad";
-  const vec = dark ? "#a78bfa" : "#6929c4";
+  const ring = dark ? "#6fe3d4" : "#0f62fe";
+  const vec = dark ? "#a78bfa" : "#8a3ffc";
   return (
     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
       <circle cx="13" cy="13" r="10.5" stroke={ring} strokeWidth="1.2" opacity="0.35" />

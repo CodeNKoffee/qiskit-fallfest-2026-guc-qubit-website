@@ -19,6 +19,7 @@ export default function Decade() {
 
   useEffect(() => {
     let raf = 0;
+    scrollState.decadeLive = true;
 
     const measure = () => {
       const list = listRef.current;
@@ -49,7 +50,10 @@ export default function Decade() {
     };
 
     raf = requestAnimationFrame(measure);
-    return () => cancelAnimationFrame(raf);
+    return () => {
+      cancelAnimationFrame(raf);
+      scrollState.decadeLive = false;
+    };
   }, []);
 
   const current = decade[Math.min(active, decade.length - 1)];
@@ -112,7 +116,7 @@ export default function Decade() {
                   style={{
                     background: isActive ? "var(--color-quantum)" : "var(--line-strong)",
                     transform: isActive ? "scale(1.35)" : "scale(1)",
-                    boxShadow: isActive ? "0 0 0 6px rgb(5 48 173 / 0.13)" : "none",
+                    boxShadow: isActive ? "0 0 0 6px rgb(15 98 254 / 0.13)" : "none",
                   }}
                 />
 

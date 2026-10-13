@@ -16,7 +16,7 @@ export default function Qubit() {
           style={{
             border: "1px solid var(--line)",
             background:
-              "linear-gradient(135deg, rgb(5 48 173 / 0.05), rgb(105 41 196 / 0.07))",
+              "linear-gradient(135deg, rgb(15 98 254 / 0.05), rgb(138 63 252 / 0.07))",
           }}
         >
           <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
@@ -30,7 +30,7 @@ export default function Qubit() {
                 </h2>
               </Reveal>
               <Reveal i={2}>
-                <p className="mt-4 font-mono text-sm" style={{ color: "var(--color-qiskit)" }}>
+                <p className="mt-4 font-mono text-sm" style={{ color: "var(--color-qiskit-ink)" }}>
                   {event.university}
                 </p>
               </Reveal>

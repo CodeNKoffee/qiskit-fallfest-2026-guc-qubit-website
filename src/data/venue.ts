@@ -18,14 +18,22 @@ export const venue = {
 
   short: "GUC",
   building: "TBA — building and hall confirmed closer to the event",
-  street: "Main Entrance, El-Tagamoa El-Khames",
+  street: "El-Tagamoa El-Khames — Gate 3 entrance",
   city: "New Cairo, Cairo Governorate",
   country: "Egypt",
 
   lat: 29.98758,
   lon: 31.44182,
 
-  gettingHere: [],
+  /** Every attendee, GUC or external, enters here. */
+  gate: "Gate 3",
+
+  /** Committee-supplied public transit routes. Replace each placeholder. */
+  mowasalatLines: [
+    "[Mowasalat Committee Line 1 Placeholder: e.g., From Ramses...]",
+    "[Mowasalat Committee Line 2 Placeholder: e.g., From Nasr City...]",
+    "[Mowasalat Committee Line 3 Placeholder: e.g., From Ring Road...]",
+  ],
 } as const;
 
 /**

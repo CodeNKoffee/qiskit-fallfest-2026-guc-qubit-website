@@ -38,8 +38,8 @@ export default function Preloader() {
     >
       <div className="font-mono text-sm tracking-[0.2em]" style={{ color: "#55525f" }}>
         <span style={{ opacity: done ? 0 : 1, transition: "opacity .3s" }}>|0⟩</span>
-        <span className="mx-3" style={{ color: "#0530ad" }}>—→</span>
-        <span style={{ color: "#6929c4" }}>|ψ⟩</span>
+        <span className="mx-3" style={{ color: "#0f62fe" }}>—→</span>
+        <span style={{ color: "#8a3ffc" }}>|ψ⟩</span>
       </div>
     </div>
   );

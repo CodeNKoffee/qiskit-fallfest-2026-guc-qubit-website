@@ -34,13 +34,11 @@ export default function HackathonTeaser() {
         <div className="grid gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
           <div>
             <Reveal>
-              <p className="eyebrow">The hackathon</p>
+              <p className="eyebrow">Capstone &amp; Certification</p>
             </Reveal>
             <Reveal i={1}>
               <h2 className="mt-4 text-balance text-5xl font-medium leading-[0.98] tracking-[-0.035em] md:text-7xl">
-                Build it.
-                <br />
-                Then defend it.
+                The Hackathon Project
               </h2>
             </Reveal>
             <Reveal i={2}>
@@ -48,22 +46,33 @@ export default function HackathonTeaser() {
                 className="mt-7 max-w-lg text-pretty text-lg leading-relaxed"
                 style={{ color: "var(--ink-muted)" }}
               >
-                The prompt drops at the end of day two. You get one working session
-                to turn it into something real, then you present it to a judging
-                panel. Top teams take prizes — everyone who takes part gets an IBM
-                Quantum certificate.
+                The event culminates in a capstone project where teams apply what
+                they&rsquo;ve learned. This is a good opportunity to present your work,
+                connect with the community and faculty of the GUC, and receive your
+                official IBM Quantum Fall Fest Certificate.
               </p>
             </Reveal>
             <Reveal i={3}>
-              <a
-                href={event.hackathonTeamUrl}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="mt-10 inline-block rounded-full px-7 py-3.5 text-[15px] font-medium transition-transform hover:scale-[1.03]"
-                style={{ background: "var(--color-signal)", color: "#05040a" }}
-              >
-                Join the hackathon team list
-              </a>
+              <div className="mt-10 flex max-w-md flex-col gap-3 xl:max-w-none xl:flex-row xl:flex-wrap xl:items-center">
+                <a
+                  href={event.registerUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex min-h-12 items-center rounded-full px-7 w-full justify-center text-center xl:w-auto text-[15px] font-medium transition-transform hover:scale-[1.03]"
+                  style={{ background: "var(--color-signal)", color: "#05040a" }}
+                >
+                  Secure Your Spot (limited seats)
+                </a>
+                <a
+                  href={event.hackathonTeamUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex min-h-12 items-center rounded-full px-7 w-full justify-center text-center xl:w-auto text-[15px] font-medium"
+                  style={{ border: "1px solid var(--line-strong)", color: "var(--ink)" }}
+                >
+                  Hackathon team list
+                </a>
+              </div>
             </Reveal>
           </div>
 

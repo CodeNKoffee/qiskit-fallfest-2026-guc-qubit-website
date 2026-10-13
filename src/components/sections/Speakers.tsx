@@ -23,11 +23,11 @@ export default function Speakers() {
                   className="mb-6 flex aspect-[4/5] items-center justify-center rounded-xl"
                   style={{
                     background:
-                      "linear-gradient(150deg, rgb(5 48 173 / 0.07), rgb(105 41 196 / 0.10))",
+                      "linear-gradient(150deg, rgb(15 98 254 / 0.07), rgb(138 63 252 / 0.10))",
                     border: "1px solid var(--line)",
                   }}
                 >
-                  <span className="font-mono text-3xl" style={{ color: "rgb(5 48 173 / 0.35)" }}>
+                  <span className="font-mono text-3xl" style={{ color: "rgb(15 98 254 / 0.35)" }}>
                     |ψ⟩
                   </span>
                 </div>

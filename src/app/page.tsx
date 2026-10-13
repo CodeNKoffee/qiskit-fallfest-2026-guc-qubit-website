@@ -2,7 +2,6 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Qubit from "@/components/sections/Qubit";
 import EventTimeline from "@/components/sections/EventTimeline";
-import Schedule from "@/components/sections/Schedule";
 import HackathonTeaser from "@/components/sections/HackathonTeaser";
 import Team from "@/components/sections/Team";
 import Venue from "@/components/sections/Venue";
@@ -20,7 +19,6 @@ export default function Home() {
       <About />
       <Qubit />
       <EventTimeline />
-      <Schedule />
       <HackathonTeaser />
       <Team />
       <Venue />

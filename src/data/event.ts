@@ -8,7 +8,7 @@ export const event = {
   hostLong: "Qubit — Quantum Computing Club",
   university: "German University in Cairo",
   universityShort: "GUC",
-  city: "",
+  city: "Cairo, Egypt",
   venue: "TBA — GUC Campus, New Cairo",
 
   /** IBM's official 2026 theme. */
@@ -16,8 +16,11 @@ export const event = {
   themeBlurb:
     "Ten years since IBM put the world's first quantum computer on the cloud — and opened the field to everyone.",
 
-  dates: "",
-  datesISO: { start: "TBA", end: "TBA" },
+  dates: "8 – 17 November 2026",
+  datesISO: { start: "2026-11-08", end: "2026-11-17" },
+
+  /** Shown in the hero button. Replace the placeholder with the real closing date. */
+  registrationCloses: "[Insert Date]",
 
   registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdF2yXzUKRcqW94SU6yoFV_7ODHgwXQ3omjFKnfcSNSJEBoxA/viewform?usp=publish-editor",
   hackathonTeamUrl: "https://docs.google.com/forms/d/e/1FAIpQLScOSYtgJ8CUMWNpiWqqzt2lokLMooRJMAA11R8Htn6jnx0zpQ/viewform?usp=publish-editor",
@@ -30,11 +33,3 @@ export const event = {
     { label: "Discord", href: "#" },
   ],
 } as const;
-
-/** Verified global Fall Fest figures, used in the About section. */
-export const globalStats = [
-  { value: "150+", label: "Host organizations worldwide" },
-  { value: "32,000+", label: "Participants in the last edition" },
-  { value: "10", label: "Years of quantum on the cloud" },
-  { value: "100%", label: "Student-led, on campus" },
-] as const;

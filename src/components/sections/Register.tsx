@@ -1,11 +1,18 @@
 import { event } from "@/data/event";
 import Section from "../ui/Section";
 import Reveal from "../ui/Reveal";
+import Art from "../ui/Art";
 
 export default function Register() {
   return (
-    <Section id="register" tone="light" className="py-24 md:py-32">
-      <div className="shell max-w-3xl">
+    <Section id="register" tone="light" className="overflow-hidden py-24 md:py-36">
+      <Art
+        src="/art/gradient.webp"
+        edge="bottom-right"
+        className="inset-0 h-full w-full object-cover object-right-bottom"
+        opacity={0.5}
+      />
+      <div className="shell relative max-w-3xl">
         <Reveal>
           <p className="eyebrow">Registration</p>
         </Reveal>
@@ -24,12 +31,12 @@ export default function Register() {
         </Reveal>
 
         <Reveal i={3}>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
             <a
               href={event.registerUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex rounded-full px-8 py-4 text-[15px] font-medium transition-transform hover:scale-[1.03]"
+              className="inline-flex min-h-12 items-center rounded-full px-8 w-full justify-center text-center sm:w-auto text-[15px] font-medium transition-transform hover:scale-[1.03]"
               style={{ background: "var(--color-quantum)", color: "#fff" }}
             >
               Register via Google Form

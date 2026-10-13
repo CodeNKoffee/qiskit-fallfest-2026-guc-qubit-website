@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { event } from "@/data/event";
+import InstitutionMark from "./InstitutionMark";
 
 export default function Footer() {
   return (
@@ -11,6 +12,9 @@ export default function Footer() {
             <p className="mt-2 max-w-sm text-pretty" style={{ color: "var(--ink-muted)" }}>
               Hosted by {event.hostLong} at the {event.university}.
             </p>
+            <div className="mt-6">
+              <InstitutionMark height={36} />
+            </div>
             {(event.city || event.dates) && (
               <p className="mt-6 font-mono text-xs" style={{ color: "var(--ink-faint)" }}>
                 {event.city && event.dates ? `${event.city} · ${event.dates}` : event.city || event.dates}
@@ -20,16 +24,15 @@ export default function Footer() {
 
           <nav aria-label="Site">
             <p className="eyebrow mb-4">Explore</p>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="text-sm">
               {[
                 { href: "/#timeline", label: "Timeline" },
-                { href: "/#schedule", label: "Schedule" },
                 { href: "/hackathon", label: "Hackathon" },
                 { href: "/#team", label: "Organisers" },
                 { href: "/#venue", label: "Venue & map" },
               ].map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} style={{ color: "var(--ink-muted)" }}>
+                  <Link href={l.href} className="inline-flex min-h-11 items-center" style={{ color: "var(--ink-muted)" }}>
                     {l.label}
                   </Link>
                 </li>
@@ -39,16 +42,16 @@ export default function Footer() {
 
           <div>
             <p className="eyebrow mb-4">Connect</p>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="text-sm">
               {event.socials.map((s) => (
                 <li key={s.label}>
-                  <a href={s.href} style={{ color: "var(--ink-muted)" }}>
+                  <a href={s.href} className="inline-flex min-h-11 items-center" style={{ color: "var(--ink-muted)" }}>
                     {s.label}
                   </a>
                 </li>
               ))}
               <li>
-                <a href={`mailto:${event.contactEmail}`} style={{ color: "var(--ink-muted)" }}>
+                <a href={`mailto:${event.contactEmail}`} className="inline-flex min-h-11 items-center" style={{ color: "var(--ink-muted)" }}>
                   {event.contactEmail}
                 </a>
               </li>

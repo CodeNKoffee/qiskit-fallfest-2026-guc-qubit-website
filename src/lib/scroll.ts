@@ -12,6 +12,8 @@ type ScrollState = {
   progress: number;
   /** Progress through the decade section specifically, 0..1. */
   decade: number;
+  /** True once a Decade section is mounted and publishing `decade`. */
+  decadeLive: boolean;
   /** Raw scroll offset in px. */
   y: number;
   velocity: number;
@@ -20,6 +22,7 @@ type ScrollState = {
 export const scrollState: ScrollState = {
   progress: 0,
   decade: 0,
+  decadeLive: false,
   y: 0,
   velocity: 0,
 };
