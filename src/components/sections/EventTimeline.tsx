@@ -1,30 +1,49 @@
 import { steps } from "@/data/timeline";
-import { event } from "@/data/event";
+import { previousWinners } from "@/data/winners";
 import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
 import Reveal from "../ui/Reveal";
 import Art from "../ui/Art";
 
-/** Wrap [bracketed placeholders] in monospace so they read as pending. */
-function withPlaceholders(text: string) {
-  return text.split(/(\[[^\]]+\])/).map((part, i) =>
-    part.startsWith("[") ? (
-      <span
-        key={i}
-        className="rounded px-1.5 py-0.5 font-mono text-[0.85em]"
-        style={{ background: "rgb(201 164 92 / 0.18)", color: "var(--ink)" }}
-      >
-        {part}
-      </span>
-    ) : (
-      part
-    )
+/** The Previous Winners display shown inside the Opening Session. */
+function PreviousWinners() {
+  return (
+    <div
+      className="mt-6 rounded-2xl p-5 md:p-6"
+      style={{ border: "1px solid var(--line-strong)", background: "rgb(255 255 255 / 0.55)" }}
+    >
+      <p className="eyebrow">Previous Winners</p>
+      {previousWinners.length === 0 ? (
+        <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
+          Winning teams and projects from previous editions will be showcased here soon.
+        </p>
+      ) : (
+        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+          {previousWinners.map((w) => (
+            <li
+              key={`${w.place}-${w.team}`}
+              className="rounded-xl p-4"
+              style={{ border: "1px solid var(--line)", background: "var(--surface)" }}
+            >
+              <p className="font-mono text-xs" style={{ color: "var(--color-qiskit-ink)" }}>
+                {w.place}
+                {w.edition ? ` · ${w.edition}` : ""}
+              </p>
+              <p className="mt-1.5 font-medium">{w.team}</p>
+              <p className="mt-0.5 text-sm" style={{ color: "var(--ink-muted)" }}>
+                {w.project}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 
 /**
- * The Symposium Timeline: one linear programme. Replaces the earlier
- * roadmap-plus-day-schedule pair, which described the same event twice.
+ * The Symposium Timeline: one linear programme. Dates and times are held
+ * back as "To be announced soon" until the programme is confirmed.
  */
 export default function EventTimeline() {
   return (
@@ -39,8 +58,8 @@ export default function EventTimeline() {
       <div className="shell relative">
         <SectionHeading
           eyebrow="Symposium Timeline"
-          title="Seven sessions, one programme."
-          lede={`${event.dates}. Bring a laptop to every technical session.`}
+          title="The programme, step by step."
+          lede="Dates and times will be announced soon. Bring a laptop to every technical session."
         />
 
         <ol className="relative max-w-3xl">
@@ -65,17 +84,19 @@ export default function EventTimeline() {
                   <span className="mx-2.5" style={{ color: "var(--ink-faint)" }} aria-hidden="true">
                     |
                   </span>
-                  <span className="font-mono text-base md:text-lg" style={{ color: "var(--color-quantum-ink)" }}>
-                    {s.when}
-                  </span>
-                  <span>: {s.title}</span>
+                  {s.title}
                 </h3>
-                <p
-                  className="mt-3 max-w-2xl text-pretty leading-relaxed"
-                  style={{ color: "var(--ink-muted)" }}
-                >
-                  {withPlaceholders(s.body)}
+                <p className="mt-2 font-mono text-sm" style={{ color: "var(--color-quantum-ink)" }}>
+                  {s.when}
                 </p>
+                <ul className="mt-3 max-w-2xl space-y-1.5" style={{ color: "var(--ink-muted)" }}>
+                  {s.points.map((pt) => (
+                    <li key={pt} className="text-pretty leading-relaxed">
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+                {s.winners && <PreviousWinners />}
               </div>
             </Reveal>
           ))}

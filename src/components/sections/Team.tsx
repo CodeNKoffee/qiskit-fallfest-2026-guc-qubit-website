@@ -41,6 +41,11 @@ export default function Team() {
                 <p className="mt-1 font-mono text-xs tracking-[0.04em]" style={{ color: "var(--ink-muted)" }}>
                   {m.role}
                 </p>
+                {m.club && (
+                  <p className="mt-1 font-mono text-xs tracking-[0.04em]" style={{ color: "var(--ink-faint)" }}>
+                    {m.club}
+                  </p>
+                )}
               </div>
             </Reveal>
           ))}

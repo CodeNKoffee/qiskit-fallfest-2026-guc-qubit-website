@@ -60,7 +60,7 @@ export default function Hero() {
                 className="inline-flex min-h-12 items-center rounded-full px-7 w-full justify-center text-center xl:w-auto text-[15px] font-medium transition-transform hover:scale-[1.03]"
                 style={{ background: "var(--color-quantum)", color: "#fff" }}
               >
-                Register Now (Closes {event.registrationCloses})
+                Register Now
               </a>
               <Link
                 href="#timeline"

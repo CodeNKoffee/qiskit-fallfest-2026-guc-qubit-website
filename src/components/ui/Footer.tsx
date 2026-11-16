@@ -37,6 +37,17 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+            <li>
+                <a
+                  href={event.registerUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex min-h-11 items-center"
+                  style={{ color: "var(--ink-muted)" }}
+                >
+                  Register
+                </a>
+              </li>
             </ul>
           </nav>
 

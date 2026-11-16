@@ -1,57 +1,54 @@
 export type Step = {
   n: string;
-  /** Weekday and dd/mm, as the programme is published locally. */
+  /** Left as "To be announced soon" until the programme is confirmed. */
   when: string;
   title: string;
-  body: string;
+  /** Short lines under the title, one per point. */
+  points: string[];
+  /** Renders the Previous Winners panel under this step. */
+  winners?: boolean;
 };
 
-/**
- * The Symposium Timeline — one linear programme, Sunday 8 to Tuesday
- * 17 November 2026. Anything in [square brackets] is a placeholder and is
- * rendered in monospace so it reads as pending rather than as copy.
- */
+const TBA = "To be announced soon";
+
+/** The Symposium Timeline: one linear programme, dates and times still TBA. */
 export const steps: Step[] = [
   {
     n: "01",
-    when: "Sunday 8/11",
-    title: "Opening",
-    body: "The event kicks off with the opening session and your first welcome to the program, as well as the hackathon theme announcement.",
+    when: TBA,
+    title: "Opening Session with Dr. Ahmed Maarouf",
+    points: ["Welcome to the program.", "Hackathon theme announcement."],
+    winners: true,
   },
   {
     n: "02",
-    when: "Monday 9/11",
+    when: TBA,
     title: "Session 1",
-    body: "Core workshop content and beginner-friendly hands-on learning for the first technical session.",
+    points: ["Core workshop content and beginner-friendly hands-on learning for the first technical session."],
   },
   {
     n: "03",
-    when: "Wednesday 11/11",
+    when: TBA,
     title: "Session 2",
-    body: "The second session continues the technical track and introduces deeper hands-on sessions (bring your laptop).",
+    points: ["The second session continues the technical track and introduces deeper hands-on sessions (bring your laptop)."],
   },
   {
     n: "04",
-    when: "Thursday 12/11",
-    title: "Session 3 & Guest Speaker",
-    body: "A featured guest talk [Speaker TBA] alongside the third main technical session of the event (bring your laptop).",
+    when: TBA,
+    title: "Session 3: Quantum Key Distribution (QKD)",
+    points: [
+      "The third technical session of the event, on QKD (bring your laptop).",
+      "Hackathon submissions are due Saturday at 11:59 PM.",
+    ],
   },
   {
     n: "05",
-    when: "Saturday 14/11",
-    title: "Featured Guest Speaker",
-    body: "An additional guest session [Speaker TBA] is scheduled mid-week to expand the program and share industry insights.",
-  },
-  {
-    n: "06",
-    when: "Sunday 15/11",
-    title: "Technical Session & Guest Speaker",
-    body: "The program continues with another focused technical session and an additional guest appearance [Speaker TBA].",
-  },
-  {
-    n: "07",
-    when: "Tuesday 17/11",
-    title: "Presentations & Closing",
-    body: "Final capstone project presentations, official IBM certification awards, and the close of the event.",
+    when: TBA,
+    title: "Presentations & Judgment with Dr. Mohamed Shehab",
+    points: [
+      "Top projects will present in person.",
+      "All attendees will receive their certificates.",
+      "The final winners will be announced.",
+    ],
   },
 ];

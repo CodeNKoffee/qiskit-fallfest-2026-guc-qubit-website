@@ -16,14 +16,13 @@ export const event = {
   themeBlurb:
     "Ten years since IBM put the world's first quantum computer on the cloud — and opened the field to everyone.",
 
-  dates: "8 – 17 November 2026",
-  datesISO: { start: "2026-11-08", end: "2026-11-17" },
+  /** Dates are being confirmed; shown wherever the site would print them. */
+  dates: "To be announced soon",
 
-  /** Shown in the hero button. Replace the placeholder with the real closing date. */
-  registrationCloses: "[Insert Date]",
 
-  registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdF2yXzUKRcqW94SU6yoFV_7ODHgwXQ3omjFKnfcSNSJEBoxA/viewform?usp=publish-editor",
-  hackathonTeamUrl: "https://docs.google.com/forms/d/e/1FAIpQLScOSYtgJ8CUMWNpiWqqzt2lokLMooRJMAA11R8Htn6jnx0zpQ/viewform?usp=publish-editor",
+  registerUrl: "https://forms.gle/JjGSB4BCRGs8ayT6A",
+  /** Hackathon team list. Empty until it is ready; the button stays disabled. */
+  hackathonTeamUrl: "",
   tagline: "Quantum computing, opened up. On our campus.",
 
   contactEmail: "qubitclub.guc@gmail.com",

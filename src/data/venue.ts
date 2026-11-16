@@ -28,12 +28,28 @@ export const venue = {
   /** Every attendee, GUC or external, enters here. */
   gate: "Gate 3",
 
-  /** Committee-supplied public transit routes. Replace each placeholder. */
-  mowasalatLines: [
-    "[Mowasalat Committee Line 1 Placeholder: e.g., From Ramses...]",
-    "[Mowasalat Committee Line 2 Placeholder: e.g., From Nasr City...]",
-    "[Mowasalat Committee Line 3 Placeholder: e.g., From Ring Road...]",
-  ],
+  /**
+   * Mwasalat Misr (public bus) details, as supplied by the committee. The
+   * station and both lines are stated by the organisers and have not been
+   * checked against Mwasalat Misr's own route data.
+   */
+  mowasalat: {
+    station: "The Mwasalat Misr bus station is right in front of the university gates.",
+    stationAr: "محطة الأتوبيس قدّام باب الجامعة مباشرة، في التجمع الثالث.",
+    lines: [
+      {
+        code: "NC10",
+        route: "Ramsis / Qatamya to the 3rd Settlement",
+        routeAr: "من رمسيس / القطامية إلى التجمع الثالث",
+      },
+      {
+        code: "NC1",
+        route: "Qatamya / 1st Settlement",
+        routeAr: "من القطامية / التجمع الأول",
+      },
+    ],
+    note: "Both lines have an official, direct stop exactly at the GUC.",
+  },
 } as const;
 
 /**

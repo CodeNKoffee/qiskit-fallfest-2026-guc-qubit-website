@@ -63,16 +63,34 @@ export default function HackathonTeaser() {
                 >
                   Secure Your Spot (limited seats)
                 </a>
-                <a
-                  href={event.hackathonTeamUrl}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="inline-flex min-h-12 items-center rounded-full px-7 w-full justify-center text-center xl:w-auto text-[15px] font-medium"
-                  style={{ border: "1px solid var(--line-strong)", color: "var(--ink)" }}
-                >
-                  Hackathon team list
-                </a>
+                {event.hackathonTeamUrl ? (
+                  <a
+                    href={event.hackathonTeamUrl}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex min-h-12 w-full items-center justify-center rounded-full px-7 text-center text-[15px] font-medium xl:w-auto"
+                    style={{ border: "1px solid var(--line-strong)", color: "var(--ink)" }}
+                  >
+                    Add
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    disabled
+                    aria-disabled="true"
+                    title="The team list opens soon"
+                    className="inline-flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-full px-7 text-center text-[15px] font-medium opacity-45 xl:w-auto"
+                    style={{ border: "1px dashed var(--line-strong)", color: "var(--ink)" }}
+                  >
+                    Add
+                  </button>
+                )}
               </div>
+              {!event.hackathonTeamUrl && (
+                <p className="mt-3 font-mono text-xs" style={{ color: "var(--ink-faint)" }}>
+                  Team list opens soon.
+                </p>
+              )}
             </Reveal>
           </div>
 

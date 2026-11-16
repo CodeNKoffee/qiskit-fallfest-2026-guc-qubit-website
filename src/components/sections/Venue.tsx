@@ -61,20 +61,47 @@ export default function Venue() {
 
             <Reveal i={1}>
               <h3 className="mt-14 text-2xl font-medium tracking-[-0.02em]">
-                Public Transit (Mowasalat) Guidelines
+                Public Transit (Mwasalat Misr) Guidelines
               </h3>
               <p className="mt-3 text-pretty leading-relaxed" style={{ color: "var(--ink-muted)" }}>
-                For attendees utilizing public transportation, follow these official routes
-                to reach the campus:
+                <strong style={{ color: "var(--ink)" }}>{venue.mowasalat.station}</strong>{" "}
+                {venue.mowasalat.note}
+              </p>
+              <p
+                lang="ar"
+                dir="rtl"
+                className="mt-3 text-lg font-medium leading-relaxed"
+                style={{ fontFamily: "var(--font-plex-arabic), system-ui, sans-serif" }}
+              >
+                {venue.mowasalat.stationAr}
               </p>
               <ul className="mt-5 space-y-3">
-                {venue.mowasalatLines.map((line) => (
+                {venue.mowasalat.lines.map((line) => (
                   <li
-                    key={line}
-                    className="rounded-xl px-4 py-3.5 font-mono text-[13px] leading-relaxed"
-                    style={{ border: "1px dashed var(--line-strong)", color: "var(--ink-muted)" }}
+                    key={line.code}
+                    className="flex items-center gap-4 rounded-xl p-4"
+                    style={{ border: "1px solid var(--line-strong)", background: "rgb(255 255 255 / 0.55)" }}
                   >
-                    {line}
+                    <span
+                      className="shrink-0 rounded-lg px-3 py-2 font-mono text-base font-medium"
+                      style={{ background: "var(--color-quantum)", color: "#fff" }}
+                    >
+                      {line.code}
+                    </span>
+                    <span>
+                      <span className="block text-[15px] font-medium leading-snug">{line.route}</span>
+                      <span
+                        lang="ar"
+                        dir="rtl"
+                        className="mt-0.5 block text-sm"
+                        style={{
+                          color: "var(--ink-muted)",
+                          fontFamily: "var(--font-plex-arabic), system-ui, sans-serif",
+                        }}
+                      >
+                        {line.routeAr}
+                      </span>
+                    </span>
                   </li>
                 ))}
               </ul>
