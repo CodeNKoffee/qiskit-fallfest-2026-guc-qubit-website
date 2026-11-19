@@ -44,7 +44,7 @@ export const steps: Step[] = [
   {
     n: "05",
     when: TBA,
-    title: "Presentations & Judgment with Dr. Mohamed Shehab",
+    title: "Presentations & Judgment with Dr. Mohammad Shehab",
     points: [
       "Top projects will present in person.",
       "All attendees will receive their certificates.",

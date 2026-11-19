@@ -29,6 +29,5 @@ export const event = {
   socials: [
     { label: "Instagram", href: "https://www.instagram.com/qubitguc?stkn=ODdwYTI5cWp1Y3V6" },
     { label: "LinkedIn", href: "https://www.linkedin.com/company/qubit-guc-quantum-computing-club" },
-    { label: "Discord", href: "#" },
   ],
 } as const;

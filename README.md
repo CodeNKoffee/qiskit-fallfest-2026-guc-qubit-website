@@ -96,6 +96,20 @@ The map panel scales with the viewport on phones
 (`clamp(19rem, 58vw, 34rem)`) and settles at a fixed height once the layout
 goes two-column.
 
+## Before and after launch: what to edit
+
+Everything below is a one-line change in `src/data`. Nothing needs a component edit.
+
+| When you have… | Edit | Notes |
+|---|---|---|
+| Dates and times | `steps[].when` in `timeline.ts` | Each step currently reads "To be announced soon". `event.dates` in `event.ts` feeds the footer and timeline intro. |
+| The hackathon team list link | `hackathonTeamUrl` in `event.ts` | Empty means the "Add" button is disabled. Setting it makes the button live. |
+| Previous winners | `previousWinners` in `winners.ts` | Add `{ place, team, project, edition }`. They appear in the Opening Session. |
+| A new registration form | `registerUrl` in `event.ts` | One setting drives every Register button. |
+| A Discord or other social link | `socials` in `event.ts` | Add `{ label, href }`. |
+| Gate 3 map centre | `lat` and `lon` in `venue.ts` | The map buttons already open the Gate 3 pin; this only re-centres the embed. |
+| Committee changes | `team.ts` | `club` adds a second line for a club role. |
+
 ## Architecture notes
 
 - **Tone system.** Every section carries `data-tone="light" | "dark"`, which
