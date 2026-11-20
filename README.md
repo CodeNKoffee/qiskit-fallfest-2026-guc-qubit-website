@@ -102,7 +102,7 @@ Everything below is a one-line change in `src/data`. Nothing needs a component e
 
 | When you have… | Edit | Notes |
 |---|---|---|
-| Dates and times | `steps[].when` in `timeline.ts` | Each step currently reads "To be announced soon". `event.dates` in `event.ts` feeds the footer and timeline intro. |
+| Dates and times | `steps[].when` in `timeline.ts` | Each step holds its published date and time ("Time TBD" where unset). `event.dates` in `event.ts` feeds the footer and timeline intro. |
 | The hackathon team list link | `hackathonTeamUrl` in `event.ts` | Empty means the "Add" button is disabled. Setting it makes the button live. |
 | Previous winners | `previousWinners` in `winners.ts` | Add `{ place, team, project, edition }`. They appear in the Opening Session. |
 | A new registration form | `registerUrl` in `event.ts` | One setting drives every Register button. |

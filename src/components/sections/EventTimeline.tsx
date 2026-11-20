@@ -1,5 +1,6 @@
 import { steps } from "@/data/timeline";
 import { previousWinners } from "@/data/winners";
+import { event } from "@/data/event";
 import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
 import Reveal from "../ui/Reveal";
@@ -43,7 +44,7 @@ function PreviousWinners() {
 
 /**
  * The Symposium Timeline: one linear programme. Dates and times are held
- * back as "To be announced soon" until the programme is confirmed.
+ * Dates and times come from data/timeline.ts.
  */
 export default function EventTimeline() {
   return (
@@ -59,7 +60,7 @@ export default function EventTimeline() {
         <SectionHeading
           eyebrow="Symposium Timeline"
           title="The programme, step by step."
-          lede="Dates and times will be announced soon. Bring a laptop to every technical session."
+          lede={`${event.dates}. Bring a laptop to every session.`}
         />
 
         <ol className="relative max-w-3xl">

@@ -17,10 +17,10 @@ export const event = {
     "Ten years since IBM put the world's first quantum computer on the cloud — and opened the field to everyone.",
 
   /** Dates are being confirmed; shown wherever the site would print them. */
-  dates: "To be announced soon",
+  dates: "22 November – 1 December 2026",
 
 
-  registerUrl: "https://forms.gle/JjGSB4BCRGs8ayT6A",
+  registerUrl: "https://forms.gle/4FKbpGTYfuUSXQh39",
   /** Hackathon team list. Empty until it is ready; the button stays disabled. */
   hackathonTeamUrl: "",
   tagline: "Quantum computing, opened up. On our campus.",
