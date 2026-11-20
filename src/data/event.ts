@@ -2,6 +2,9 @@
  * Single source of truth for event facts.
  * Anything marked TBA is a placeholder — replace before launch.
  */
+/** The current registration form. Every Register button and the hackathon "Add" button use it. */
+const FORM_URL = "https://forms.gle/4FKbpGTYfuUSXQh39";
+
 export const event = {
   name: "Qiskit Fall Fest 2026",
   host: "Qubit",
@@ -20,9 +23,9 @@ export const event = {
   dates: "22 November – 1 December 2026",
 
 
-  registerUrl: "https://forms.gle/4FKbpGTYfuUSXQh39",
-  /** Hackathon team list. Empty until it is ready; the button stays disabled. */
-  hackathonTeamUrl: "",
+  registerUrl: FORM_URL,
+  /** The hackathon "Add" button. Leave empty to show it disabled instead. */
+  hackathonTeamUrl: FORM_URL,
   tagline: "Quantum computing, opened up. On our campus.",
 
   contactEmail: "qubitclub.guc@gmail.com",
