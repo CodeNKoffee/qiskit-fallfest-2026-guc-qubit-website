@@ -18,7 +18,7 @@ export const venue = {
 
   short: "GUC",
   building: "TBA — building and hall confirmed closer to the event",
-  street: "El-Tagamoa El-Khames — Gate 3 entrance",
+  street: "El-Tagamoa El-Khames — Gate 1 entrance",
   city: "New Cairo, Cairo Governorate",
   country: "Egypt",
 
@@ -26,7 +26,7 @@ export const venue = {
   lon: 31.44182,
 
   /** Every attendee, GUC or external, enters here. */
-  gate: "Gate 3",
+  gate: "Gate 1",
 
   /**
    * Mwasalat Misr (public bus) details, as supplied by the committee. The
@@ -74,7 +74,7 @@ export const mapEmbedSrc = GOOGLE_KEY
     )}&z=16&hl=en&output=embed`;
 
 /**
- * The shared Google Maps pin for Gate 3, where every attendee enters. Both
+ * The shared Google Maps pin for Gate 1, where every attendee enters. Both
  * buttons open it directly so people navigate to the gate, not the campus
  * centre the embed above is framed on.
  */

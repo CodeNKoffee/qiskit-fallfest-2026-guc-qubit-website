@@ -8,7 +8,7 @@ export default function Venue() {
   return (
     <Section id="venue" tone="light" className="py-24 md:py-32">
       <div className="shell">
-        <SectionHeading eyebrow="Getting there" title="Venue & Access (GUC Gate 3)" />
+        <SectionHeading eyebrow="Getting there" title="Venue & Access (GUC Gate 1)" />
 
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
           <div>

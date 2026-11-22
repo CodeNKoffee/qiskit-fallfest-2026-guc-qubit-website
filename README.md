@@ -107,7 +107,7 @@ Everything below is a one-line change in `src/data`. Nothing needs a component e
 | Previous winners | `previousWinners` in `winners.ts` | Add `{ place, team, project, edition }`. They appear in the Opening Session. |
 | A new registration form | `registerUrl` in `event.ts` | One setting drives every Register button. |
 | A Discord or other social link | `socials` in `event.ts` | Add `{ label, href }`. |
-| Gate 3 map centre | `lat` and `lon` in `venue.ts` | The map buttons already open the Gate 3 pin; this only re-centres the embed. |
+| Gate 1 map centre | `lat` and `lon` in `venue.ts` | The map buttons already open the Gate 1 pin; this only re-centres the embed. |
 | Committee changes | `team.ts` | `club` adds a second line for a club role. |
 
 ## Architecture notes
